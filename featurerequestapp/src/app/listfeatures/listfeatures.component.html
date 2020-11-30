@@ -1,0 +1,33 @@
+<br/><br/>
+<div class="container">
+    <h2>Feature Requests</h2>
+    <div >
+      <div class="text-left float-left">
+        <p>Below are the list of feature requests:</p>   
+      </div>
+      <div class="text-right float-right"><button type="button" class="btn btn-success" (click)="gotoAddNewFeature()" >Add New Feature</button></div>   
+    </div>      
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Client</th>
+          <th>Client Priority</th>
+          <th>Target Date</th>
+          <th>Product Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feature of featurelist">
+          <td>{{feature.title}}</td>
+          <td>{{feature.description}}</td>
+          <td>{{feature.client}}</td>
+          <td>{{feature.clientPriority}}</td>
+          <td>{{feature.targetDate}}</td>
+          <td>{{feature.productArea}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

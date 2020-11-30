@@ -1,0 +1,39 @@
+<br/><br/>
+<div class="col-sm-6 ">
+    <div class="container">
+        <h2>Add Feature Request Form</h2><br/>
+        <form #addfeatureform="ngForm" (ngSubmit)="addFeatureFormSubmit()">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" required [(ngModel)]="feature.title" id="title" placeholder="Enter title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" required [(ngModel)]="feature.description" placeholder="Enter description" name="description">
+        </div>
+        <div class="form-group">
+            <label for="client">Client:</label>
+            <select class="form-control" id="client" name="client" required [(ngModel)]="feature.client">
+                <option *ngFor="let client of clients" [value]="client">{{client}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="clientpriority">Client Priority:</label>
+            <input type="text" class="form-control" id="clientpriority" required [(ngModel)]="feature.clientPriority" placeholder="Enter client priority" name="clientpriority">
+        </div>
+        <div class="form-group">
+            <label for="targetDate">Target Date:</label>
+            <input type="text" class="form-control" id="targetDate" required [(ngModel)]="feature.targetDate" placeholder="Enter target date in yyyy-mm-dd format (Ex: 2020-12-25)" name="targetDate">
+        </div>
+        <div class="form-group">
+            <label for="productarea">Product Area:</label>
+            <select class="form-control" id="productarea" name="productarea" required [(ngModel)]="feature.productArea">
+                <option *ngFor="let prodarea of productAreas" [value]="prodarea">{{prodarea}}</option>
+            </select>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+        <button type="button" class="btn btn-primary" (click)="gotoFeaturesList()" >Go Back</button>
+        </form>
+    </div>
+</div>  
